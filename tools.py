@@ -17,7 +17,7 @@ def insert_record(date: datetime.date, weight: float):
         conn.commit()
 
 
-def get_records() -> pd.DataFrame:
+def select_records() -> pd.DataFrame:
     with Session(engine) as session:
         df = pd.DataFrame(session.query(DateWeightTable.__table__).all())
     return df

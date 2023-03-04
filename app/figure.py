@@ -1,9 +1,9 @@
 import plotly.graph_objects as go
-from tools import get_records
+from tools import select_records
 
 
 def make_figure():
-    _df_ = get_records()
+    _df_ = select_records()
 
     fig = go.Figure()
     fig.add_trace(go.Scatter(
