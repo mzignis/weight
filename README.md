@@ -1,3 +1,16 @@
+# Weight monitor app
+Simple app writen in plotly and postgres to monitor my weight
+
+
+## Save database configuration
+Create `db/config.ini` file with postgres configurations
+```
+[GENERAL]
+USER-NAME = ...
+PASSWORD = ...
+HOST-NAME = localhost
+DATABASE-NAME = postgres
+```
 
 ## Run local postgres db - docker 
 
@@ -10,8 +23,6 @@ docker run  -d \
 -e PGUSER=user-name \
 -e POSTGRES_PASSWORD=user-password \
 postgres
-
-
 ```
 
 ### 2. Via *.yaml file
@@ -25,8 +36,8 @@ services:
     ports:
       - 5432:5432
     environment:
-      - PGUSER=username
-      - POSTGRES_PASSWORD=userpassword
+      - PGUSER=user-name
+      - POSTGRES_PASSWORD=user-password
 ```
 Run via docker compose (replace filename to proper one)
 ```bash
